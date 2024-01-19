@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+iframe{
+height:100px;
+width:500px;
+}
+</style>
+</head>
+<body>
+    
+    <table border=2>
+      <thead>
+         <tr>
+             <th>Name</th>
+             <th>Artist</th>
+             <th>Genre</th>
+             <th>Play</th>
+         </tr>
+         </thead>
+         
+         <tbody>
+         <!--Thyme Leaf(for each loop) code to display the data-->
+         <tr th:each="song:${songs}">
+            <td th:text="${song.name}">  </td>
+            <td th:text="${song.artist}">  </td>
+            <td th:text="${song.genre}">  </td>
+            <td>
+              <audio controls>
+                   <source th:src="${song.link}"  type="audio/mpeg">
+              </audio>
+               </td>
+           
+         </tr>
+         </tbody>
+    </table>
+
+</body>
+</html>
